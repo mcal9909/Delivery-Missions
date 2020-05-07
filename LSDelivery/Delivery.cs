@@ -131,7 +131,7 @@ namespace delivery
                                     GeneratePed1 = World.CreatePed(PedHash.Michael, Game.Player.Character.GetOffsetInWorldCoords(new Vector3(0, 5, 0)));
                                     GeneratePed1.BlockPermanentEvents = true;
                                     GeneratePed1.AlwaysKeepTask = true;
-                                    GeneratePed1 = World.CreatePed(PedHash.Andreas, Game.Player.Character.GetOffsetInWorldCoords(new Vector3(0, 5, 0)));
+                                    GeneratePed2 = World.CreatePed(PedHash.Andreas, Game.Player.Character.GetOffsetInWorldCoords(new Vector3(0, 5, 0)));
                                     GeneratePed2.BlockPermanentEvents = true;
                                     GeneratePed2.AlwaysKeepTask = true;
                                     if (GeneratePed1 != null && GeneratePed2 != null)
