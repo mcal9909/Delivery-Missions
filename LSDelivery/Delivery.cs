@@ -30,13 +30,12 @@ namespace delivery
         public Ped GeneratePed1;
         public Ped GeneratePed2;
         public Vehicle MissionVehicle;
-        public Mission CurrentMission = null;
-        public Mission EndMission = null;
+        public Mission CurrentMission = null;        
         public Blip MissionBlip;
         float lastHelpMsgTime;
         public float distance = 0;
         public List<Mission> myList = new List<Mission>();
-        PedGroup playerGroup;
+        
 
         public static UIText myUIText;
 
@@ -52,7 +51,6 @@ namespace delivery
 
             if (DEBUG)
             {
-
                 myUIText = new UIText("" + CurrentState + " Distance:" + distance, new Point(10, 10), 0.4f, Color.WhiteSmoke, 0, false);
                 myUIText.Draw();
             }
@@ -184,9 +182,9 @@ namespace delivery
                             if (distance < 5 && MissionVehicle.IsStopped)
                             {
                                 MissionBlip.Remove();
-                                if (GeneratePed1.CurrentPedGroup == playerGroup) playerGroup.Remove(GeneratePed1);
-                                if (GeneratePed2.CurrentPedGroup == playerGroup) playerGroup.Remove(GeneratePed2);
-                                if (GeneratePed1.CurrentPedGroup != playerGroup && GeneratePed2.CurrentPedGroup != playerGroup)
+                                if (GeneratePed1.CurrentPedGroup == Game.Player.Character.CurrentPedGroup) GeneratePed1.LeaveGroup();
+                                if (GeneratePed2.CurrentPedGroup == Game.Player.Character.CurrentPedGroup) GeneratePed2.LeaveGroup();
+                                if (GeneratePed1.CurrentPedGroup != Game.Player.Character.CurrentPedGroup && GeneratePed2.CurrentPedGroup != Game.Player.Character.CurrentPedGroup)
                                 {
                                     GeneratePed1.Task.WanderAround();
                                     GeneratePed2.Task.WanderAround();
