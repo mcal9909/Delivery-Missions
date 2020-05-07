@@ -201,7 +201,7 @@ namespace delivery
                     case MissionStates.Finish:
                         if (!GeneratePed1.IsInVehicle() && !GeneratePed2.IsInVehicle())
                         {
-                            Game.Player.Money += 1000;
+                            Game.Player.Money += 2000;
                             CurrentState = MissionStates.None; // Ped has gotten out of vehicle, give player money and set us to having no mission.
                         }
                         break;
