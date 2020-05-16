@@ -134,12 +134,13 @@ namespace delivery
                 {
                     case MissionStates.None: // Active When No Mission is present.
                         if (CurrentMission != null)
-                        {                            
+                        {
                             if (CurrentMission.active)
                             {
                                 MissionBlipStart(CurrentMission, MissionBlip);
                                 CurrentState = MissionStates.Offered;
                             }
+                            else GenerateMission();
                         }
                         break;
 
